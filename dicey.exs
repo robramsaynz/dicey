@@ -8,6 +8,12 @@ dice_num = fn ->
   |> Enum.join
 end
 
+# (1..1000) |> Enum.each(fn _x ->
+# 	if dice_num.() =~ ~r/[^123456/} do
+# 		IO.puts "error: dice_num returned value outside range 1..6"
+# 	end
+# end)
+
 {:ok, file_text} = File.read("diceware.wordlist.asc")
 lines = String.split(file_text, ~r{\R})
 dictionary_lines = Enum.filter(lines, &( &1 =~ ~r/^\d{5}/ ))
