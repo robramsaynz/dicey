@@ -14,7 +14,7 @@ end
 # 	end
 # end)
 
-{:ok, file_text} = File.read("diceware.wordlist.asc")
+{:ok, file_text} = File.read("wordlist.diceware.asc")
 lines = String.split(file_text, ~r{\R})
 dictionary_lines = Enum.filter(lines, &( &1 =~ ~r/^\d{5}/ ))
 
